@@ -1,5 +1,9 @@
 button {
-  border: none;
+  margin-left: 2px;
+  width: 40px;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #64697b;
 }
 
 .App {
@@ -9,6 +13,7 @@ button {
   box-sizing: border-box;
   background-image: url('/assets/background.jpg');
   background-size: 100% 100%;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .container {
@@ -16,13 +21,13 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 1150px;
+  margin-right: 1050px;
   border-radius: 8px;
 }
 .containerLista {
-  background-color: white;
+  background-color: whitesmoke;
   width: 508px;
-  height: 383px;
+  height: 450px;
   overflow-y: scroll;
   border-radius: 8px;
 }
@@ -31,22 +36,21 @@ button {
   margin-top: 1rem;
   margin-bottom: -1rem;
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: center;
 }
 .lista p {
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 300px;
+  max-width: 300px;
   text-align: start;
   font-size: 20px;
   font-weight: bold;
-  color: #64697b;
+  color: #4d4f57;
 }
 .checkbox {
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 50%;
-
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
   border: 2px solid #64697b;
   box-shadow: none;
   margin: 10px;
@@ -70,15 +74,21 @@ button {
   height: 60px;
   border-radius: 5px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
 }
 .inputName {
-  margin-top: 10px;
-  text-align: center;
-  border: none;
-  height: 50px;
-  width: 200px;
-  box-shadow: 0px 0px 21px -7px rgba(0, 0, 0, 0.3);
+  border: #1b5699;
+  background-color: whitesmoke;
+  width: 500px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
 }
 input:focus {
   outline: none;

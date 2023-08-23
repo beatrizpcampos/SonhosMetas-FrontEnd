@@ -11,16 +11,16 @@ function App() {
         return (
           <div className='lista'>
             <button 
-             onClick={() => editStatusSonho(sonho)}
-            className='checkbox'
-              style={{ backgroundColor: sonho.status ? "purple" : "white" }}>
+             onClick={() => checkSonho(sonho)}
+             className='checkbox' 
+             style={{ backgroundColor: sonho.status ? '#1b5699' : '#f0f0f0' }}>
             </button>
             <p>{sonho.nome}</p>
             <button onClick={() => editSonhoExist(sonho)}>
-              <AiOutlineEdit size={20} color={"#64697b"}></AiOutlineEdit>
+              <AiOutlineEdit size={25} color={"#4d4f57"}></AiOutlineEdit>
             </button>
             <button onClick={() => deleteSonho(sonho)}>
-              <AiOutlineDelete size={20} color={"#64697b"}></AiOutlineDelete>
+              <AiOutlineDelete size={25} color={"#4d4f57"}></AiOutlineDelete>
             </button>
           </div>
         )
@@ -68,10 +68,19 @@ function App() {
     getSonhos()
   }
 
+  async function checkSonho(sonho) {
+    await axios.put("http://localhost:3333/sonhos", {
+      id: sonho.id,
+      status: !sonho.status,
+    });
+    getSonhos();
+  }
+
   const [sonhos, setSonhos] = useState([])
   const [inputValue, setInputValue] = useState("")
-  const [inputVisibility, setInputVisibility] = useState(false)
+  const [inputVisibility, setInputVisibility] = useState()
   const [selectedSonho, setSelectedSonho] = useState()
+
   useEffect(() => {
     getSonhos()
   }, [])
@@ -102,7 +111,7 @@ function App() {
            : createSonho
           : editStatusSonho} 
           className='addButton'>
-          {inputVisibility ? "Confirm" : "+ Novo Sonho ou Meta"}
+          {inputVisibility ? "Confirmar" : "Novo Sonho ou Meta"}
           </button>
       </div>
     </div>
