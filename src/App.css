@@ -4,36 +4,41 @@ button {
 
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('/assets/background.jpg');
+  background-size: 100% 100%;
 }
 
 .container {
-  background-color: #dae0f5;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-right: 1150px;
+  border-radius: 8px;
 }
-.sonhos {
+.containerLista {
   background-color: white;
   width: 508px;
   height: 383px;
   overflow-y: scroll;
+  border-radius: 8px;
 }
 
-.sonho {
+.lista {
   margin-top: 1rem;
   margin-bottom: -1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.sonho p {
-  min-width: 200px;
-  max-width: 200px;
+.lista p {
+  min-width: 400px;
+  max-width: 400px;
   text-align: start;
-
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: bold;
   color: #64697b;
 }
@@ -47,27 +52,25 @@ button {
   margin: 10px;
 }
 .header {
-  background-color: #a879e6;
+  background-color: #1b5699;
   width: 508px;
-  height: 60px;
-  box-shadow: 0px 0px 21px -7px rgba(0, 0, 0, 0.3);
-  margin: 20px;
+  height: 70px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 0.8rem;
+  border-radius: 5px;
 }
-.newTaskButton {
+.addButton {
   border: none;
-  background-color: #a879e6;
-  width: 160px;
-  height: 50px;
-  border-radius: 24px;
-  margin-top: 20px;
+  background-color: #1b5699;
+  width: 508px;
+  height: 60px;
+  border-radius: 5px;
   color: white;
-  font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .inputName {
   margin-top: 10px;

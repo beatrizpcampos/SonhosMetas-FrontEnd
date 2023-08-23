@@ -6,10 +6,10 @@ import axios from 'axios';
 function App() {
   const Sonhos = ({ sonhos }) => {
    return (
-    <div className='sonhos'>
+    <div className='containerLista'>
       {sonhos.map((sonho) => {
         return (
-          <div className='sonho'>
+          <div className='lista'>
             <button 
              onClick={() => editStatusSonho(sonho)}
             className='checkbox'
@@ -44,7 +44,7 @@ function App() {
   }
 
   async function editSonho() {
-    const response = await axios.put("http://localhost:3333/sonhos", {
+    await axios.put("http://localhost:3333/sonhos", {
       id: selectedSonho.id,
       nome: inputValue,
     })
@@ -55,7 +55,7 @@ function App() {
   }
 
   async function createSonho(){
-    const response = await axios.post("http://localhost:3333/sonhos", {
+    await axios.post("http://localhost:3333/sonhos", {
       nome: inputValue,
     })
     getSonhos()
@@ -78,8 +78,7 @@ function App() {
 
   return (
    <div className="App">
-      <header className="container">
-
+      <div className="container">
         <div className='header'>
           <h1>Sonhos e Metas 2023</h1>
         </div>
@@ -102,11 +101,10 @@ function App() {
            ? editSonho
            : createSonho
           : editStatusSonho} 
-          className='newTaskButton'>
+          className='addButton'>
           {inputVisibility ? "Confirm" : "+ Novo Sonho ou Meta"}
           </button>
-
-      </header>
+      </div>
     </div>
   );
 }
